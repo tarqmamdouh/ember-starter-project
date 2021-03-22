@@ -1,2 +1,42 @@
-<h1>show</h1>
+<div class="row header_title justify-content-center">
+    <blockquote class="blockquote text-center">
+        <h1>{{model.title}}</h1>
+        <footer class="blockquote-footer">Asked By <cite title="Source Title">{{model.authorEmail}}</cite>
+        </footer>
+    </blockquote>
+</div>
+{{#if (eq questionOwner model.authorEmail)}}
+<div class="row justify-content-center">
+    <div>{{#link-to 'questions.edit' model}}{{md-icon "create"}}{{/link-to}}</div>
+    <div style="width:50px"></div>
+    <div>{{#link-to 'questions.destroy' model}}{{md-icon "delete"}}{{/link-to}}</div>
+</div>
+{{/if}}
+<div class="row spacer-50"></div>
+<div class="row justify-content-center">
+    <p>{{model.description}}</p>
+</div>
+<div class="row justify-content-center">
+    <div class="col-md-2">
+        <h5> <strong>Answers :-</strong> </h5>
+    </div>
+    <div class="col-md-10"></div>
+</div>
+<div class="row spacer-10"></div>
+{{#each model.answers as |answer|}}
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <div class="centered_button answer_row"> {{answer.authorEmail}} </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card question_card" style="cursor:pointer;">
+            <div class="card-body">
+                <p class="card-text cutted_text">{{answer.body}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}
+<div class="row spacer-10"></div>
+
 {{outlet}}
