@@ -12,10 +12,11 @@ Router.map(function() {
     this.route("dashboard", function() {});
     this.route('questions', { path: "" }, function() {
         this.route('new', { path: '/ask' });
-        this.route('show', { path: ':slug' });
-        this.route('edit', { path: ':slug/edit' });
-        this.route('destroy', { path: ':slug/destroy' });
+        this.route('show', { path: '/questions/:slug' });
+        this.route('edit', { path: '/questions/:slug/edit' });
+        this.route('destroy', { path: '/questions/:slug/destroy' });
     });
+    this.route('not-found', { path: '/*path' });
 });
 
 export default Router;
