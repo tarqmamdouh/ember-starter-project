@@ -4,7 +4,7 @@ export default Route.extend({
     actions: {
         save(record) {
             record.save()
-                .then(() => this.transitionTo('questions'));
+                .then(() => this.transitionTo('questions.show', record));
         },
 
         willTransition() {
