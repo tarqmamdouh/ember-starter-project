@@ -39,9 +39,15 @@ main {
 }
 
 .date_row,
-.time_row {
+.time_row,
+.answer_row {
     justify-content: flex-end;
     padding-top: 15px;
+}
+
+.answer_row {
+    text-align: end;
+    padding-top: 12%;
 }
 
 .date_text,

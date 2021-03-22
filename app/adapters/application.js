@@ -39,14 +39,15 @@ export default DS.JSONAPIAdapter.extend(DataAdapterMixin, {
         // };
 
         // payload.meta = meta;
-
-        if (payload.meta) {
-            payload.meta = {
-                current_page: payload.meta['current-page'],
-                next_page: payload.meta['next-page'],
-                prev_page: payload.meta['prev-page'],
-                total_count: payload.meta['total-count'],
-                total_pages: payload.meta['total-pages']
+        if (payload){
+            if (payload.meta) {
+                payload.meta = {
+                    current_page: payload.meta['current-page'],
+                    next_page: payload.meta['next-page'],
+                    prev_page: payload.meta['prev-page'],
+                    total_count: payload.meta['total-count'],
+                    total_pages: payload.meta['total-pages']
+                }
             }
         }
 
