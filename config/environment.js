@@ -31,7 +31,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
 
-    ENV.serverURL = "http://localhost:3000";
+    ENV.serverURL = "https://polar-retreat-56092.herokuapp.com";
     ENV.webURL = "http://localhost:4200";
     ENV.webSocketURL = "ws://localhost:3000/cable";
   }
