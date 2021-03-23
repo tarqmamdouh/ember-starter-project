@@ -50,7 +50,7 @@ module.exports = function(environment) {
 
   if (environment === "production") {
     // here you can enable a production-specific feature
-    ENV.serverURL = "http://95.111.243.17";
+    ENV.serverURL = "https://dev.railsacademy.com";
   }
 
   ENV.apiBaseURL = ENV.serverURL + "/" + ENV.apiNamespace;
