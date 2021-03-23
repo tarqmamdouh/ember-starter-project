@@ -50,6 +50,7 @@ module.exports = function(environment) {
 
   if (environment === "production") {
     // here you can enable a production-specific feature
+    ENV.serverURL = "https://polar-retreat-56092.herokuapp.com";
   }
 
   ENV.apiBaseURL = ENV.serverURL + "/" + ENV.apiNamespace;
