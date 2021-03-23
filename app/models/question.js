@@ -24,5 +24,5 @@ export default DS.Model.extend({
         return this.get('tags').split(',');
     }),
 
-    answers: DS.hasMany('answer')
+    answers: DS.hasMany('answers')
 });

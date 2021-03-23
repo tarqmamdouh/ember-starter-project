@@ -9,13 +9,27 @@ export default Controller.extend({
         return this.get('session.isAuthenticated');
     }),
 
+    answerContent: '',
+    deleteModal: false,
+
     questionOwner: computed('model', function(){
         if(this.get('userSignedIn')){
-            return this.get("currentSession.user.email") 
+            return this.get("currentSession.user.email") ;
         } else {
             return false;
         }
     }),
 
-    actions: {}
+    actions: {
+        addAnswer(model, answer) {
+          this.store.createRecord('answer', {
+            question: model,
+            body: answer
+          }).save().then(() => this.set('answerContent', ''));
+        },
+
+        deleteAnswer(answer) {
+            answer.destroyRecord()
+        }
+    }
 });

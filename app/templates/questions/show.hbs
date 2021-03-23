@@ -26,17 +26,47 @@
 {{#each model.answers as |answer|}}
 <div class="row justify-content-center">
     <div class="col-md-4">
-        <div class="centered_button answer_row"> {{answer.authorEmail}} </div>
+        <div class="centered_button answer_row"> {{answer.author.authoremail}} </div>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-6">
         <div class="card question_card" style="cursor:pointer;">
             <div class="card-body">
                 <p class="card-text cutted_text">{{answer.body}}</p>
             </div>
         </div>
     </div>
+    <div class="col-md-2">
+        {{#if (eq answer.author.authoremail model.authorEmail)}}
+        <div class="row justify-content-center">
+            {{!-- <div>{{#link-to 'answers.edit'}}{{md-icon "create"}}{{/link-to}}</div> --}}
+            <div style="width:50px"></div>
+            <div class="centered_button" onclick={{action 'deleteAnswer' answer}}>{{md-icon "delete"}}</div>
+        </div>
+        {{/if}}
+    </div>
 </div>
 {{/each}}
 <div class="row spacer-10"></div>
+{{#if userSignedIn}}
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <div class="centered_button answer_row"> Your Answer </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card question_card" style="cursor:pointer;">
+            <div class="card-body">
+                <form {{action 'addAnswer' model answerContent on='submit' }}>
+                    <div class="form-group">
+                        {{textarea value=answerContent class='form-control' rows='3' placeholder="let the world knows
+                        what you know"}}
+                    </div>
+                    <button type="submit" class="btn btn-primary">Answer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+{{/if}}
 
 {{outlet}}
