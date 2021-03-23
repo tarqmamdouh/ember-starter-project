@@ -31,7 +31,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
 
-    ENV.serverURL = "https://polar-retreat-56092.herokuapp.com";
+    ENV.serverURL = "http://localhost:3000";
     ENV.webURL = "http://localhost:4200";
     ENV.webSocketURL = "ws://localhost:3000/cable";
   }
@@ -50,7 +50,7 @@ module.exports = function(environment) {
 
   if (environment === "production") {
     // here you can enable a production-specific feature
-    ENV.serverURL = "https://polar-retreat-56092.herokuapp.com";
+    ENV.serverURL = "http://95.111.243.17";
   }
 
   ENV.apiBaseURL = ENV.serverURL + "/" + ENV.apiNamespace;
