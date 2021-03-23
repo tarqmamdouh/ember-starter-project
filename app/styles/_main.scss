@@ -1,3 +1,77 @@
 main {
-  padding-top: 70px;
+    padding-top: 70px;
+}
+
+.header_title {
+    padding: 45px;
+}
+
+.spacer-10 {
+    padding-bottom: 10px;
+}
+
+.spacer-20 {
+    padding-bottom: 20px;
+}
+
+.spacer-50 {
+    padding-bottom: 50px;
+}
+
+.ask_question_btn {
+    padding: 15px 25px;
+    letter-spacing: 2px;
+}
+
+.centered_button {
+    padding: 18px;
+}
+
+.question_card {
+    margin: 15px;
+}
+
+.cutted_text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.date_row,
+.time_row,
+.answer_row {
+    justify-content: flex-end;
+    padding-top: 15px;
+}
+
+.answer_row {
+    text-align: end;
+    padding-top: 12%;
+}
+
+.date_text,
+.time_text {
+    padding-left: 10px;
+}
+
+.tag_row {
+    display: inline-flex;
+}
+
+.tag_icon {
+    padding-right: 5px;
+}
+
+.tag_text {
+    padding: 7px;
+    margin: 4px;
+}
+
+.page-item {
+    padding: 2px;
+}
+
+.ask_question_btn {
+    float: right;
 }

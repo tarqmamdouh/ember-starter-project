@@ -1,0 +1,39 @@
+<div class="h-100">
+    <div class="m-auto">
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Title</label>
+                {{input value=model.title type="text" class="form-control" id="exampleInputTitle1"
+                aria-describedby="TitleHelp"}}
+                {{#if model.errors.title}}
+                <div class="text-danger">
+                    {{model.errors.title.firstObject.message}}
+                </div>
+                {{/if}}
+            </div>
+            <div class="form-group">
+                <label for="exampleInputDescription1">Description</label>
+                {{textarea value=model.description id="" type="text" class="md-textarea form-control"
+                id="exampleInputDescription1"}}
+                {{#if model.errors.description}}
+                <div class="text-danger">
+                    {{model.errors.description.firstObject.message}}
+                </div>
+                {{/if}}
+            </div>
+            <div class="form-group">
+                <label for="exampleInputTags">Tags</label>
+                {{input value=model.tagsstring type="text" class="form-control" id="exampleInputTags"
+                aria-describedby="TagsHelp"}}
+                {{#if model.errors.tags}}
+                <div class="text-danger">
+                    {{model.errors.tags.firstObject.message}}
+                </div>
+                {{/if}}
+            </div>
+            <button type="submit" class="btn btn-primary" {{action 'save' model}}>Update</button>
+        </form>
+    </div>
+</div>
+
+{{outlet}}

@@ -1,0 +1,6 @@
+<p>Are you sure?</p>
+
+<form {{action 'confirm' model on='submit'}}>
+  <p><button>Delete</button>or {{#link-to 'questions'}}cancel{{/link-to}}</p>
+</form>
+{{outlet}}
